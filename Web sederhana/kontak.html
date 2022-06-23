@@ -28,14 +28,32 @@
         <div>
             <form>
                 <label for="email">Email</label><br />
-                <input type="email" name="email" placeholder="alamat email"/><br />
+                <input type="email"  id="email" name="email" placeholder="alamat email"/><br />
                 <label for="message">Pesan</label><br />
-                <textarea name="message" placeholder="Tulis pesan anda..." rows="10" cols="80"></textarea>
+                <textarea name="message" id="message" placeholder="Tulis pesan anda..." rows="10" cols="80"></textarea>
                 <br />
-                <br />
-                <input type="submit" value="Kirim" />
-            </form>
-        </div>
+               
+                <input type="button" value="Kirim" onclick="cetak()">
 
+                <br>
+                <p id="cetak-email"></p>
+                <p id="cetak-message"></p>
+
+
+            </form>
+        <script>
+            function cetak() {
+                var email = document.getElementById("email").value ;
+                var message = document.getElementById("message").value ;
+            
+                if (email !="" && message !="") {
+                    document.getElementById("cetak-email").innerHTML = email
+                    document.getElementById("cetak-message").innerHTML = message
+                    return True;
+                }else {
+                    alert('gk ngisi PKI');
+                }
+                }
+        </script>
     </div>
 </div>
